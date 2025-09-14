@@ -4,7 +4,7 @@ enum Role {
   Guest = "GUEST",
 }
 
-function getPermissions(role: Role) {
+function getPermissions(role: Role): string[] {
   switch (role) {
     case Role.Admin:
       return ["create", "read", "update", "delete"];
@@ -12,10 +12,7 @@ function getPermissions(role: Role) {
       return ["read", "update"];
     case Role.Guest:
       return ["read"];
-    default:
-      [];
-      break;
   }
 }
 
-console.log(getPermissions("ADMIN"));
+console.log(getPermissions(Role.Admin));
